@@ -10,25 +10,33 @@ var app = express()
 var PORT = 6900
 
 
-// Serving index.html as homepage
+// SERVES
 
+
+// Get homepage
 app.get("/", function(req, res){
 
     res.sendFile(path.join( __dirname, "index.html"))
 
 })
 
-
 // Get JS
 app.get('/index.js', function(req, res){
+
     res.sendFile(path.join(__dirname, "/assets/js/index.js"))
+
+})
+
+// Redirect to notes page
+app.get('/notes', function(req, res){
+
+    res.sendFile(path.join(__dirname, "notes.html" ))
+
 })
 
 
 
-
 // Start Server
-
 app.listen(PORT, function(){
 
     console.log("Server listening on port:"+ PORT)
