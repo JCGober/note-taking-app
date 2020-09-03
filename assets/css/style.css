@@ -19,7 +19,7 @@ html, body {
   color: #000000;
   width: 100%;
   outline: none;
-  border: none;
+  border: double;
 }
 
 .note-textarea {

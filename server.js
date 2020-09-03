@@ -34,6 +34,14 @@ app.get('/notes', function(req, res){
 
 })
 
+//Styles redirect
+app.get('/style.css', function(req, res){
+
+    res.sendFile(path.join(__dirname, "assets/css/style.css" ))
+
+})
+
+
 
 
 // Start Server
