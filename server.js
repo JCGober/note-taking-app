@@ -7,7 +7,7 @@ var path = require("path")
 // SET UP of EXPRESS
 var app = express()
 
-var PORT = 6900
+var PORT = process.env.PORT || 6900
 
 
 // SERVES
@@ -35,12 +35,8 @@ app.get('/notes', function(req, res){
 })
 
 //Styles redirect
-app.get('/style.css', function(req, res){
 
-    res.sendFile(path.join(__dirname, "assets/css/style.css" ))
-
-})
-
+app.use('/css', express.static(path.join(__dirname, 'assets')))
 
 
 
